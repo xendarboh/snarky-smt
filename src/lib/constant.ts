@@ -1,6 +1,6 @@
 import { Field, isReady } from 'snarkyjs';
 
-await isReady;
+// X: await isReady;
 
 export const EMPTY_VALUE = Field(0);
 export const SMT_DEPTH = 254;

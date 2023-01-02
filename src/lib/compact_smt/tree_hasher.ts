@@ -1,7 +1,7 @@
 import { Bool, Field, isReady, Poseidon, Provable } from 'snarkyjs';
 import { Hasher } from '../model';
 
-await isReady;
+// X: await isReady;
 
 export { TreeHasher };
 

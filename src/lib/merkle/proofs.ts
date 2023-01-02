@@ -13,7 +13,7 @@ import { Hasher } from '../model';
 import { countSetBits, fieldToHexString, hexStringToField } from '../utils';
 import { ProvableMerkleTreeUtils } from './verify_circuit';
 
-await isReady;
+// X: await isReady;
 
 export { BaseMerkleProof, MerkleTreeUtils };
 export type { CompactMerkleProof, CompactMerkleProofJSON };
