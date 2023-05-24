@@ -3,12 +3,10 @@ import {
   Circuit,
   DeployArgs,
   Field,
-  isReady,
   method,
   Mina,
   Permissions,
   PrivateKey,
-  shutdown,
   SmartContract,
   State,
   state,
@@ -19,8 +17,6 @@ import { MerkleTree } from '../lib/merkle/merkle_tree';
 import { ProvableMerkleTreeUtils } from '../lib/merkle/verify_circuit';
 
 import { MemoryStore } from '../lib/store/memory_store';
-
-await isReady;
 
 const doProofs = true;
 
@@ -153,7 +149,6 @@ async function test() {
   await tx.prove();
   await tx.sign([feePayerKey]).send();
   console.log('end method');
-  shutdown();
 }
 
 await test();

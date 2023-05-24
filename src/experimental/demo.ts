@@ -1,11 +1,9 @@
-import { Field, isReady, shutdown } from 'snarkyjs';
+import { Field } from 'snarkyjs';
 import { DeepMerkleSubTree } from '../lib/merkle/deep_subtree';
 import { MerkleTree } from '../lib/merkle/merkle_tree';
 import { MerkleTreeUtils } from '../lib/merkle/proofs';
 import { MemoryStore } from '../lib/store/memory_store';
 import { printBits } from '../lib/utils';
-
-await isReady;
 
 // printBits(Field(0).toBits(), '0');
 // printBits(Field(1).toBits(), '1');
@@ -63,4 +61,3 @@ finalRoot = deepSubTree.update(key3, Field(1010));
 
 console.log('final root: ', finalRoot.toString());
 root.assertEquals(finalRoot);
-shutdown();

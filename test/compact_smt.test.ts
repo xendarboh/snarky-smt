@@ -1,4 +1,4 @@
-import { Circuit, Field, isReady, Poseidon, shutdown } from 'snarkyjs';
+import { Circuit, Field, Poseidon } from 'snarkyjs';
 import { CSMTUtils } from '../src/lib/compact_smt/proofs';
 import { CompactSparseMerkleTree } from '../src/lib/compact_smt/csmt';
 import { ProvableCSMTUtils } from '../src/lib/compact_smt/verify_circuit';
@@ -8,18 +8,12 @@ describe('CompactSparseMerkleTree', () => {
   let tree: CompactSparseMerkleTree<Field, Field>;
 
   // beforeAll(async () => {
-  //   await isReady;
   // });
 
-  afterAll(async () => {
-    // `shutdown()` internally calls `process.exit()` which will exit the running Jest process early.
-    // Specifying a timeout of 0 is a workaround to defer `shutdown()` until Jest is done running all tests.
-    // This should be fixed with https://github.com/MinaProtocol/mina/issues/10943
-    setTimeout(shutdown, 0);
-  });
+  // afterAll(async () => {
+  // });
 
   beforeEach(async () => {
-    await isReady;
     tree = new CompactSparseMerkleTree<Field, Field>(
       new MemoryStore<Field>(),
       Field,

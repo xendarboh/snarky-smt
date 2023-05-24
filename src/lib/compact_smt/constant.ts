@@ -1,6 +1,4 @@
-import { Field, isReady } from 'snarkyjs';
-
-await isReady;
+import { Field } from 'snarkyjs';
 
 export const PLACEHOLDER = Field(0);
 export const CSMT_DEPTH = 254;

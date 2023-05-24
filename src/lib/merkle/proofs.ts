@@ -1,19 +1,10 @@
-import {
-  Bool,
-  CircuitValue,
-  Field,
-  isReady,
-  Poseidon,
-  Provable,
-} from 'snarkyjs';
+import { Bool, CircuitValue, Field, Poseidon, Provable } from 'snarkyjs';
 
 import { EMPTY_VALUE, RIGHT } from '../constant';
 import { defaultNodes } from '../default_nodes';
 import { Hasher } from '../model';
 import { countSetBits, fieldToHexString, hexStringToField } from '../utils';
 import { ProvableMerkleTreeUtils } from './verify_circuit';
-
-await isReady;
 
 export { BaseMerkleProof, MerkleTreeUtils };
 export type { CompactMerkleProof, CompactMerkleProofJSON };

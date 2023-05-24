@@ -1,4 +1,4 @@
-import { Circuit, Field, isReady, Poseidon, shutdown } from 'snarkyjs';
+import { Circuit, Field, Poseidon } from 'snarkyjs';
 import { MemoryStore } from '../src/lib/store/memory_store';
 import { SparseMerkleTree } from '../src/lib/smt/smt';
 import { SMTUtils } from '../src/lib/smt/proofs';
@@ -8,18 +8,12 @@ describe('SparseMerkleTree', () => {
   let tree: SparseMerkleTree<Field, Field>;
 
   // beforeAll(async () => {
-  //   await isReady;
   // });
 
-  afterAll(async () => {
-    // `shutdown()` internally calls `process.exit()` which will exit the running Jest process early.
-    // Specifying a timeout of 0 is a workaround to defer `shutdown()` until Jest is done running all tests.
-    // This should be fixed with https://github.com/MinaProtocol/mina/issues/10943
-    setTimeout(shutdown, 0);
-  });
+  // afterAll(async () => {
+  // });
 
   beforeEach(async () => {
-    await isReady;
     tree = await SparseMerkleTree.build<Field, Field>(
       new MemoryStore<Field>(),
       Field,

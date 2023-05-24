@@ -1,5 +1,5 @@
 /*
-Description: 
+Description:
 This example describes how developers can use Merkle Trees as a basic off-chain storage tool.
 zkApps on Mina can only store a small amount of data on-chain, but many use cases require your application to at least reference big amounts of data.
 Merkle Trees give developers the power of storing large amounts of data off-chain, but proving its integrity to the on-chain smart contract!
@@ -11,14 +11,12 @@ import {
   CircuitString,
   DeployArgs,
   Field,
-  isReady,
   method,
   Mina,
   Permissions,
   Poseidon,
   PrivateKey,
   PublicKey,
-  shutdown,
   SmartContract,
   State,
   state,
@@ -30,8 +28,6 @@ import { SparseMerkleProof } from '../lib/smt/proofs';
 import { SparseMerkleTree } from '../lib/smt/smt';
 import { ProvableSMTUtils } from '../lib/smt/verify_circuit';
 import { MemoryStore } from '../lib/store/memory_store';
-
-await isReady;
 
 const doProofs = true;
 
@@ -211,8 +207,6 @@ console.log('Final points: ' + (await smt.get(Bob))?.points);
 await addNewAccount(Olivia, oliviaAc);
 
 console.log('Final Olivia points: ' + (await smt.get(Olivia))?.points);
-
-shutdown();
 
 async function addNewAccount(name: CircuitString, account: Account) {
   let merkleProof = await smt.prove(name);
